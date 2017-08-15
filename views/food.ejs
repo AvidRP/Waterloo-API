@@ -18,17 +18,21 @@
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
   </head>
   <body>
-      <form class="ui form">
+    <div class="formContainer" >
+      <form class="ui form" action = "/food/:id" method = "post">
         <div class="field">
-          <input type="text" name="first-name" placeholder="Name of the restaurant...">
+          <input type="text" name="restaurant" placeholder="Search for a restaurant located outside of UW...">
         </div>
         <div >
           <button class="ui large green button">Search</button>
         </div>
-        <hr>
+      </form>
+      <hr>
+      <form action="/food/all" method="post">
         <div>
           <button class="ui large blue button">View All Restaurants</button>
         </div>
       </form>
+    </div>
   </body>
 </html>
