@@ -1,8 +1,8 @@
-form {
+.formContainer {
   position: fixed;
   top: 50%;
   left: 50%;
-  /* bring your own prefixes */
+
   transform: translate(-50%, -50%);
   width: 30em;
   text-align: center;
@@ -14,10 +14,10 @@ body, html {
 
   background: url("/images/foodTwo.jpg");
 
-      /* Full height */
+
       height: 100%;
 
-      /* Center and scale the image nicely */
+
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
