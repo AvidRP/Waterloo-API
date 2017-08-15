@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Semantic UI -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="/css/foodAll.css">
+
+    <!-- jQuery -->
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+    <!-- js file -->
+    <script type="text/javascript" src = "/js/events.js"></script>
+  </head>
+  <body>
+    <div class="container">
+
+      <% for(var i = 0; i < searchResults.data.length; i++) { %>
+        <ul>
+            <%= searchResults.data[i].title %>
+              <div class="option-buttons">
+                <div class="infodiv">
+                  <button class="ui basic teal button infoButton">
+                    <i class="fa fa-info-circle" aria-hidden="true"></i> More info
+                  </button>
+                  <div class="detailInfo">
+
+
+                  </div>
+                </div>
+
+
+
+              </div>
+            </li>
+            <hr>
+        </ul>
+      <%}%>
+  </div>
+
+
+  </body>
+</html>

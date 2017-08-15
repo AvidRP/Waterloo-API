@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Waterlooooo | restaurants</title>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Semantic UI -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+
+    <link rel="stylesheet" href="/css/searchRestaurants.css">
+
+    <!-- jQuery -->
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+    <!-- js file -->
+    <script type="text/javascript" src = "/js/foodAll.js"></script>
+  </head>
+  <body>
+    <div class="container">
+
+      <% for(var i = 0; i < searchResults.restaurants.length; i++) { %>
+        <ul>
+            <li><%= searchResults.restaurants[i].restaurant.name %> &nbsp
+              <div class="option-buttons">
+                <div class="infodiv">
+                  <button class="ui primary button infoButton">
+                    <i class="fa fa-info-circle" aria-hidden="true"></i> More info
+                  </button>
+                  <div class="detailInfo">
+                    <p>Address : <%= searchResults.restaurants[i].restaurant.location.address %></p>
+                    <p>Cuisines : <%= searchResults.restaurants[i].restaurant.cuisines %></p>
+                    <p>Average cost for two: $<%= searchResults.restaurants[i].restaurant.average_cost_for_two %> </p>
+                    <p>Average Rating : <%= searchResults.restaurants[i].restaurant.user_rating.aggregate_rating %></p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <hr>
+        </ul>
+      <%}%>
+  </div>
+  </body>
+</html>
