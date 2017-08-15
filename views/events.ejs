@@ -28,9 +28,12 @@
             <%= searchResults.data[i].title %>
               <div class="option-buttons">
                 <div class="infodiv">
-                  <button class="ui basic teal button infoButton">
-                    <i class="fa fa-info-circle" aria-hidden="true"></i> More info
-                  </button>
+                  <a href="<%=searchResults.data[i].url%>">
+                    <button class="ui basic teal button infoButton">
+                      <i class="fa fa-info-circle" aria-hidden="true"></i> I want to know more!
+                    </button>
+                  </a>
+
                   <div class="detailInfo">
 
 
