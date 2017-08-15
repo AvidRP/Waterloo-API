@@ -71,3 +71,7 @@ app.get("/events", function (req, res) {
   }
   });
 })
+
+app.get("/courses", function (req, res) {
+  res.render("courses")
+})
