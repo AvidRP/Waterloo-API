@@ -73,5 +73,19 @@ app.get("/events", function (req, res) {
 })
 
 app.get("/courses", function (req, res) {
-  res.render("courses")
+  request('https://api.uwaterloo.ca/v2/courses.json?key=7fd7f0d76a1af99b0873199cb94d6b89', function (error, response, body) {
+  if(!error && response.statusCode == 200) {
+    var allCourseResults = JSON.parse(body);
+    res.render("courses", {searchResults: allCourseResults})
+  }
+  });
+})
+
+app.get("/awards", function (req, res) {
+  request('https://api.uwaterloo.ca/v2/awards/undergraduate.json?key=7fd7f0d76a1af99b0873199cb94d6b89', function (error, response, body) {
+  if(!error && response.statusCode == 200) {
+    var allAwardResults = JSON.parse(body);
+    res.render("awards", {searchResults: allAwardResults})
+  }
+  });
 })
