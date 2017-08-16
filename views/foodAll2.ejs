@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/css/foodAll2.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+
+
+  </head>
+  <body>
+    <div class="container">
+      <%for(var i = 0; i < searchResults.data.length; i++) {%>
+        <div id="tb-testimonial" class="testimonial testimonial-primary-filled">
+          <div class="testimonial-section">
+            <% var filterData = searchResults.data[i].description %>
+            <%= filterData.replace(/&nbsp;/g, "|").replace("&#39;", "'").replace("&rsquo;", "'").replace("grab n&rsquo; go", "grab n' go") %>
+          </div>
+            <div class="testimonial-desc">
+                <img src="<%= searchResults.data[i].logo %>" alt="" />
+                <div class="testimonial-writer">
+                  <div class="testimonial-writer-name"><%=searchResults.data[i].outlet_name%></div>
+
+                  <%if (searchResults.data[i].opening_hours.wednesday.opening_hour != null) {%>
+                      <p>Monday to Friday: <%=searchResults.data[i].opening_hours.wednesday.opening_hour%> to <%=searchResults.data[i].opening_hours.wednesday.closing_hour%></p>
+                  <%} else {%>
+                    <p>Sorry, there isn't any information avaliable for this food service.</p>
+                  <%}%>
+                </div>
+            </div>
+
+
+        </div>
+        <hr>
+      <%}%>
+    </div>
+
+
+</body>
+</html>
