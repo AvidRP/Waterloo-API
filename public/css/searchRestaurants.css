@@ -1,3 +1,9 @@
 li {
   list-style: none;
 }
+.container {
+  text-align: center;
+}
+hr {
+  width: 40%;
+}
