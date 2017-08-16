@@ -1,0 +1,15 @@
+.container {
+  text-align: center;
+}
+
+hr {
+  width: 40%;
+}
+
+.buttonPadding {
+  padding-top: 20px;
+}
+
+li {
+  list-style: none;
+}
