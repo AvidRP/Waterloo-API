@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Waterlooooo | Awards</title>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Semantic UI -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+
+    <link rel="stylesheet" href="/css/awards.css">
+
+    <!-- jQuery -->
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+    <!-- js file -->
+    <script type="text/javascript" src = "/js/awards.js"></script>
+
+  </head>
+  <body>
+    <div class="container">
+      <%for (var i = 0; i < searchResults.data.length; i++) {%>
+        <div class="awardTitle">
+          <%=searchResults.data[i].title%>
+        </div>
+
+        <div class="ui buttons buttonPadding">
+          <a href="https://uwaterloo.ca/student-awards-financial-aid/forms">
+            <button class="ui blue button">Apply</button>
+          </a>
+          <div class="or"></div>
+          <div class="moreInfoButton">
+            <a href="#" class = "">
+              <button class="ui violet button moreInfoButton">More Info</button>
+            </a>
+          </div>
+
+
+        </div>
+        <div class="popup">
+          <i class = "window close icon" width = "30"></i>
+          <h1><%=searchResults.data[i].title%></h1>
+          <p>About the award: <%=searchResults.data[i].description%></p>
+          <hr>
+          <p>Value: <%=searchResults.data[i].value%></p>
+          <hr>
+          <p>Award type: <%=searchResults.data[i].type[0]%></p>
+          <hr>
+          <p>Citizenship requirements: <%=searchResults.data[i].citizenship%></p>
+          <hr>
+          <p>Programs:
+            <%for (var j = 0; j < searchResults.data[i].programs.length; j++) {%>
+              <%=searchResults.data[i].programs[j]%>
+            <%}%>
+          </p>
+          <hr>
+          <p>Eligibility:
+            <%for (var j = 0; j < searchResults.data[i].application.eligibility.length; j++) {%>
+              <%if (searchResults.data[i].application.eligibility == null) {%>
+                Sorry, could find the requirements for this award.
+              <%} else {%>
+                <ul>
+                  <li><%=searchResults.data[i].application.eligibility[j]%></li>
+                </ul>
+
+              <%}%>
+
+            <%}%>
+          </p>
+          <hr>
+          <p>Application deadline: <%=searchResults.data[i].deadlines.application%></p>
+        </div>
+        <hr>
+      <%}%>
+    </div>
+  </body>
+</html>
