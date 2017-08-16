@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Waterlooooo | Courses</title>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Semantic UI -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+
+    <link rel="stylesheet" href="/css/courses.css">
+
+  </head>
+  <body>
+    <div class="container">
+      <table class = "ui striped table">
+        <tr>
+          <th>Course Title</th>
+          <th>Course ID</th>
+          <th>Subject</th>
+          <th>Catalog Number</th>
+        </tr>
+        <%for (var i = 0; i < searchResults.data.length; i ++) {%>
+          <tr>
+            <td><%=searchResults.data[i].title%></td>
+            <td><%=searchResults.data[i].course_id%></td>
+            <td><%=searchResults.data[i].subject%></td>
+            <td><%=searchResults.data[i].catalog_number%></td>
+            <td>
+              <%var subject = searchResults.data[i].subject %>
+              <%lowercaseSub = subject.toLowerCase()%>
+              <% var number = searchResults.data[i].catalog_number%>
+              <a href="https://uwflow.com/course/<%=lowercaseSub%><%=number%>">
+                <button class="ui right labeled icon blue basic button">
+                  <i class="info circle icon"></i>
+                  View on UW Flow
+                </button>
+              </a>
+            </td>
+          </tr>
+        <%}%>
+      </table>
+    </div>
+  </body>
+</html>
