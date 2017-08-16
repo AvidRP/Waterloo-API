@@ -1,0 +1,99 @@
+
+.testimonial{
+    margin-bottom: 10px;
+}
+
+    .testimonial-section {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        position: relative;
+        border: 1px solid #fff;
+    }
+    .testimonial-section:after {
+        top: 100%;
+        left: 50px;
+        border: solid transparent;
+        content: " ";
+        position: absolute;
+        border-top-color: #fff;
+        border-width: 15px;
+        margin-left: -15px;
+    }
+
+    .testimonial-desc {
+        margin-top: 20px;
+        text-align:left;
+        padding-left: 15px;
+    }
+        .testimonial-desc img {
+            border: 1px solid #f5f5f5;
+            border-radius: 150px;
+            height: 70px;
+            padding: 3px;
+            width: 70px;
+            display:inline-block;
+            vertical-align: top;
+        }
+
+        .testimonial-writer{
+            display: inline-block;
+            vertical-align: top;
+            padding-left: 10px;
+        }
+
+            .testimonial-writer-name{
+                font-weight: bold;
+            }
+
+.container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+body, html {
+  background: linear-gradient(to bottom right, #00bf8f, #001510); /* Standard syntax */
+}
+
+
+
+
+
+
+
+    .testimonial.testimonial-primary-filled{
+
+    }
+        .testimonial.testimonial-primary-filled .testimonial-section{
+            color: #fff;
+            background-color: #337ab7;
+            border-color: #000;
+        }
+
+            .testimonial.testimonial-primary-filled .testimonial-section:after{
+                border-top-color: #337AB7;
+            }
+
+        .testimonial.testimonial-primary-filled .testimonial-desc{
+
+        }
+
+            .testimonial.testimonial-primary-filled .testimonial-desc img{
+                border-color: #000;
+                background-color: #000;
+            }
+
+            .testimonial.testimonial-primary-filled .testimonial-writer-name{
+
+                font-family: 'Anton', sans-serif;
+                font-size: 25px;
+                color: white;
+                text-shadow:
+                 -1px -1px 0 #000,
+                  1px -1px 0 #000,
+                  -1px 1px 0 #000,
+                   1px 1px 0 #000;
+            }
