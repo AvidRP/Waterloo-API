@@ -4,8 +4,26 @@
  left: 50%;
  /* bring your own prefixes */
  transform: translate(-50%, -50%);
+ font-family: 'Just Another Hand', cursive;
+ font-size: 30px;
 }
 
 .row {
   padding: 20px;
+}
+
+h1 {
+  padding-bottom: 70px;
+  font-family: 'Anton', sans-serif;
+  font-size: 50px;
+  color: white;
+  text-shadow:
+   -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+}
+
+body {
+  background: linear-gradient(#83a4d4, #b6fbff)
 }
