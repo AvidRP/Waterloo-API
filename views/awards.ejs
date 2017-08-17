@@ -25,25 +25,25 @@
   <body>
     <div class="container">
       <%for (var i = 0; i < searchResults.data.length; i++) {%>
-        <div class="awardTitle">
+        <!-- <div class="awardTitle">
           <%=searchResults.data[i].title%>
-        </div>
+        </div> -->
 
-        <div class="ui buttons buttonPadding">
+        <!-- <div class="ui buttons buttonPadding">
           <a href="https://uwaterloo.ca/student-awards-financial-aid/forms">
             <button class="ui blue button">Apply</button>
           </a>
           <div class="or"></div>
-          <div class="moreInfoButton">
-            <a href="#" class = "">
+          <div >
+
               <button class="ui violet button moreInfoButton">More Info</button>
-            </a>
-          </div>
+
+          </div> -->
 
 
-        </div>
+        <!-- </div> -->
         <div class="popup">
-          <i class = "window close icon" width = "30"></i>
+          <!-- <i class = "window close icon" width = "30"></i> -->
           <h1><%=searchResults.data[i].title%></h1>
           <p>About the award: <%=searchResults.data[i].description%></p>
           <hr>
@@ -75,7 +75,7 @@
           <hr>
           <p>Application deadline: <%=searchResults.data[i].deadlines.application%></p>
         </div>
-        <hr>
+        <hr id = "finalhr">
       <%}%>
     </div>
   </body>
