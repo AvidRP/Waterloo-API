@@ -9,7 +9,10 @@
     <!-- Semantic UI -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
     <!-- stylesheet -->
-    <link rel="stylesheet" href="/css/foodAll.css">
+    <link rel="stylesheet" href="/css/events.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Just+Another+Hand" rel="stylesheet">
 
     <!-- jQuery -->
     <script
@@ -20,35 +23,51 @@
     <!-- js file -->
     <script type="text/javascript" src = "/js/events.js"></script>
   </head>
+
+
+
   <body>
     <div class="container">
+<h1>
+  <%if(searchResults.data.length -1 < 5) {%>
+    Looks like there isn't a lot going on at LOO :(
+    <br>
+    Only <%=searchResults.data.length -1 %> events found.
+  <%} else {%>
+    <%=searchResults.data.length%> events found!
+  <%}%>
 
-      <% for(var i = 0; i < searchResults.data.length; i++) { %>
-        <ul>
-            <%= searchResults.data[i].title %>
-              <div class="option-buttons">
-                <div class="infodiv">
-                  <a href="<%=searchResults.data[i].url%>">
-                    <button class="ui basic teal button infoButton">
-                      <i class="fa fa-info-circle" aria-hidden="true"></i> I want to know more!
-                    </button>
-                  </a>
+</h1>
+  <%for (var i = 0; i < searchResults.data.length-1; i += 2) {%>
+    <div class="row">
+      <div class="col-sm-6 col-md-6" >
+        <p><%=searchResults.data[i].title%>
+          &nbsp
+          &nbsp
+          <span>
+            <button class="circular ui baisc blue icon button">Find out more &nbsp
+              <i class = "right chevron icon"></i>
+            </button>
+          </span>
+        </p>
 
-                  <div class="detailInfo">
+      </div>
+      <div class="col-sm-6 col-md-6" >
+        <p>
+          <%=searchResults.data[i+1].title%>
+          &nbsp
+          &nbsp
+          <span>
+            <button class="circular ui baisc blue icon button">Find out more &nbsp
+              <i class = "right chevron icon"></i>
+            </button>
+          </span>
+        </p>
+      </div>
+    </div>
+  <%}%>
 
-
-                  </div>
-                </div>
-
-
-
-              </div>
-            </li>
-            <hr>
-        </ul>
-      <%}%>
-  </div>
-
+</div>
 
   </body>
 </html>
