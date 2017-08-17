@@ -16,8 +16,19 @@
 
     <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+    <!-- js file -->
+    <script type="text/javascript" src = "/js/awards.js"></script>
   </head>
   <body>
+    <%include ./partials/navbar%>
+
     <div class="formContainer" >
       <form class="ui form" action = "/food/:id" method = "post">
         <div class="field">
@@ -34,5 +45,6 @@
         </div>
       </form>
     </div>
+    <%include ./partials/navbarfooter%>
   </body>
 </html>

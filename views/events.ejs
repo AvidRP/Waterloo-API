@@ -27,6 +27,7 @@
 
 
   <body>
+    <%include ./partials/navbar%>
     <div class="container">
 <h1>
   <%if(searchResults.data.length -1 < 5) {%>
@@ -45,9 +46,12 @@
           &nbsp
           &nbsp
           <span>
-            <button class="circular ui baisc blue icon button">Find out more &nbsp
-              <i class = "right chevron icon"></i>
-            </button>
+            <a href="http://www.feds.ca/events/">
+              <button class="circular ui baisc blue icon button">Find out more &nbsp
+                <i class = "right chevron icon"></i>
+              </button>
+            </a>
+
           </span>
         </p>
 
@@ -68,6 +72,7 @@
   <%}%>
 
 </div>
+<%include ./partials/navbarfooter%>
 
   </body>
 </html>

@@ -12,6 +12,8 @@
 
     <link rel="stylesheet" href="/css/awards.css">
 
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+
     <!-- jQuery -->
     <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -23,6 +25,8 @@
 
   </head>
   <body>
+    <% include ./partials/navbar%>
+
     <div class="container">
       <%for (var i = 0; i < searchResults.data.length; i++) {%>
         <!-- <div class="awardTitle">
@@ -45,21 +49,21 @@
         <div class="popup">
           <!-- <i class = "window close icon" width = "30"></i> -->
           <h1><%=searchResults.data[i].title%></h1>
-          <p>About the award: <%=searchResults.data[i].description%></p>
+          <p>ABOUT THE AWARD: <%=searchResults.data[i].description%></p>
           <hr>
-          <p>Value: <%=searchResults.data[i].value%></p>
+          <p>VALUE: <%=searchResults.data[i].value%></p>
           <hr>
-          <p>Award type: <%=searchResults.data[i].type[0]%></p>
+          <p>AWARD TYPE: <%=searchResults.data[i].type[0]%></p>
           <hr>
-          <p>Citizenship requirements: <%=searchResults.data[i].citizenship%></p>
+          <p>CITIZENSHIP REQUIREMENTS: <%=searchResults.data[i].citizenship%></p>
           <hr>
-          <p>Programs:
+          <p>PROGRAMS:
             <%for (var j = 0; j < searchResults.data[i].programs.length; j++) {%>
               <%=searchResults.data[i].programs[j]%>
             <%}%>
           </p>
           <hr>
-          <p>Eligibility:
+          <p>ELIGIBILITY:
             <%for (var j = 0; j < searchResults.data[i].application.eligibility.length; j++) {%>
               <%if (searchResults.data[i].application.eligibility == null) {%>
                 Sorry, could find the requirements for this award.
@@ -73,10 +77,19 @@
             <%}%>
           </p>
           <hr>
-          <p>Application deadline: <%=searchResults.data[i].deadlines.application%></p>
+          <p>APPLICATION DEADLINE: <%=searchResults.data[i].deadlines.application%></p>
         </div>
+        <div class="buttonPadding">
+          <a href="https://uwaterloo.ca/student-awards-financial-aid/forms">
+            <button class = "ui basic green button">Apply now
+              <i class = "ui right chevron icon"></i>
+            </button>
+          </a>
+        </div>
+
         <hr id = "finalhr">
       <%}%>
     </div>
+    <% include ./partials/navbarfooter%>
   </body>
 </html>
