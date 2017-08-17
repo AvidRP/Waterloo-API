@@ -34,7 +34,7 @@ app.get("/food/all", function (req, res) {
   request('https://api.uwaterloo.ca/v2/foodservices/locations.json?key=7fd7f0d76a1af99b0873199cb94d6b89', function (error, response, body) {
   if(!error && response.statusCode == 200) {
     var allFoodResults = JSON.parse(body);
-    res.render("foodAll", {searchResults: allFoodResults})
+    res.render("foodAll2", {searchResults: allFoodResults})
   }
   });
 })
@@ -77,6 +77,15 @@ app.get("/courses", function (req, res) {
   if(!error && response.statusCode == 200) {
     var allCourseResults = JSON.parse(body);
     res.render("courses", {searchResults: allCourseResults})
+  }
+  });
+})
+
+app.get("/courses/:id", function (req, res) {
+  request('https://api.uwaterloo.ca/v2/courses.json?key=7fd7f0d76a1af99b0873199cb94d6b89', function (error, response, body) {
+  if(!error && response.statusCode == 200) {
+    var allCourseResults = JSON.parse(body);
+    res.render("./courses/courses" + req.params.id, {searchResults: allCourseResults})
   }
   });
 })
