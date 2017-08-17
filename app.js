@@ -98,3 +98,12 @@ app.get("/awards", function (req, res) {
   }
   });
 })
+
+app.get("/infoSessions", function(req, res) {
+  request('https://api.uwaterloo.ca/v2/resources/infosessions.json?key=7fd7f0d76a1af99b0873199cb94d6b89', function (error, response, body) {
+  if(!error && response.statusCode == 200) {
+    var allInfoResults = JSON.parse(body);
+    res.render("infoSessions", {searchResults: allInfoResults})
+  }
+  });
+})
