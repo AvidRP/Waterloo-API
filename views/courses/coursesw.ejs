@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Waterlooooo | Courses</title>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Semantic UI -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+
+    <link rel="stylesheet" href="/css/courses.css">
+
+  </head>
+  <body>
+    <table class = "ui table">
+      <tr class = "letterIndex">
+        <td><a href="/courses">A</a></td>
+        <td><a href="/courses/b">B</a></td>
+        <td><a href="/courses/c">C</a></td>
+        <td><a href="/courses/d">D</a></td>
+        <td><a href="/courses/e">E</a></td>
+        <td><a href="/courses/f">F</a></td>
+        <td><a href="/courses/g">G</a></td>
+        <td><a href="/courses/h">H</a></td>
+        <td><a href="/courses/i">I</a></td>
+        <td><a href="/courses/j">J</a></td>
+        <td><a href="/courses/k">K</a></td>
+        <td><a href="/courses/l">L</a></td>
+        <td><a href="/courses/m">M</a></td>
+        <td><a href="/courses/n">N</a></td>
+        <td><a href="/courses/o">O</a></td>
+        <td><a href="/courses/p">P</a></td>
+        <td><a href="/courses/q">Q</a></td>
+        <td><a href="/courses/r">R</a></td>
+        <td><a href="/courses/s">S</a></td>
+        <td><a href="/courses/t">T</a></td>
+        <td><a href="/courses/u">U</a></td>
+        <td><a href="/courses/v">V</a></td>
+        <td><a href="#">W</a></td>
+        <td><a href="/courses/x">X</a></td>
+        <td><a href="/courses/y">Y</a></td>
+        <td><a href="/courses/z">Z</a></td>
+
+      </tr>
+    </table>
+    <div class="container">
+      <table class = "ui striped table">
+        <tr>
+          <th>Course Title</th>
+          <th>Course ID</th>
+          <th>Subject</th>
+          <th>Catalog Number</th>
+          </tr>
+          <%for (var i = 0; i < searchResults.data.length; i ++) {%>
+            <%if(searchResults.data[i].subject.charAt(0) == "W" ) {%>
+            <tr>
+              <td><%=searchResults.data[i].title%></td>
+              <td><%=searchResults.data[i].course_id%></td>
+              <td><%=searchResults.data[i].subject%></td>
+              <td><%=searchResults.data[i].catalog_number%></td>
+              <td>
+                <%var subject = searchResults.data[i].subject %>
+                <%lowercaseSub = subject.toLowerCase()%>
+                <% var number = searchResults.data[i].catalog_number%>
+                <a href="https://uwflow.com/course/<%=lowercaseSub%><%=number%>">
+                  <button class="ui right labeled icon blue basic button">
+                    <i class="info circle icon"></i>
+                    View on UW Flow
+                  </button>
+                </a>
+              </td>
+            </tr>
+          <%}%>
+          <%}%>
+
+      </table>
+    </div>
+  </body>
+</html>
