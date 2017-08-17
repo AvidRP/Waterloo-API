@@ -1,10 +1,22 @@
 body, html {
   height: 100%;
   width: 100%;
-  background: url("/images/courses.jpg");
+  background: linear-gradient(to right, #83a4d4, #b6fbff);
   color: white;
 }
 
 button:hover {
   background: blue;
+}
+
+.container {
+  padding-top: 50px;
+}
+
+.letterIndex>td:nth-child(odd) {
+  background: #f1f1f1
+}
+
+.letterIndex {
+  text-align: center;
 }
