@@ -1,5 +1,7 @@
 .container {
   text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 hr {
@@ -12,4 +14,13 @@ hr {
 
 li {
   list-style: none;
+}
+
+#finalhr {
+
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid red;
+
 }
