@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Info Session</title>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Semantic UI -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+
+    <link rel="stylesheet" href="/css/infoSessions.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+    <!-- js file -->
+    <script type="text/javascript" src = "/js/awards.js"></script>
+    
+  </head>
+  <body>
+    <%include ./partials/navbar%>
+
+    <div class="container">
+      <%for (var i = 0; i < searchResults.data.length; i++) {%>
+        <h1><%=searchResults.data[i].employer%></h1>
+        <table class = "ui celled table">
+          <tr>
+            <td><b>Date:</b></td>
+            <td><%=searchResults.data[i].date%></td>
+          </tr>
+          <tr>
+            <td><b>Time:</b></td>
+            <td><%=searchResults.data[i].start_time%> to <%=searchResults.data[i].end_time%></td>
+          </tr>
+          <tr>
+            <td><b>Location:</b></td>
+            <td><%=searchResults.data[i].building.code%> <%=searchResults.data[i].building.room%></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <i>
+                <%if(searchResults.data[i].description == "") {%>
+                  Description not avaliable.
+                <%} else {%>
+                  <%=searchResults.data[i].description%>
+                <%}%>
+              </i>
+            </td>
+          </tr>
+        </table>
+        <hr>
+      <%}%>
+    </div>
+    <%include ./partials/navbarfooter%>
+  </body>
+</html>
